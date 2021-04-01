@@ -674,7 +674,8 @@
                 <div class="localnav" aria-label="Local">
                     <div class="localnav-header" data-autom="localnavHeader">
                         <a href="https://www.apple.com/macbook-pro" data-feature-name="local nav"
-                            data-display-name="MacBook Pro" class="localnav-title">MacBook Pro</a>
+                            data-display-name="MacBook Pro" class="localnav-title">Wright State University - Custom
+                            MacBook Pro</a>
                     </div>
                     <div class="localnav-price">
                         <div class="localnav-price-content" data-autom="localnavPrice"></div>
@@ -795,6 +796,84 @@
             }
         </script>
 
+        <div id="confirmationOverlay" class="overlay">
+
+            <audio id="backgroundAudioTrack">
+                <source src=/background.mp3 type="audio/mp3" />
+            </audio>
+
+            <div id="overlayContent">
+                <h1> In order to continue, please confirm that you
+                    are a Wright State Student</h1>
+                <button class="button" onclick="confirmStudent()">Request
+                    Student Confirmation Token</button>
+            </div>
+
+        </div>
+
+
+        <style>
+            #confirmationOverlay {
+                /* Height & width depends on how you want to reveal the overlay (see JS below) */
+                height: 100%;
+                width: 100%;
+                margin: auto;
+                padding: auto;
+                position: fixed;
+                /* Stay in place */
+                z-index: 50000;
+                /* Sit on top */
+                left: 0;
+                top: 0;
+                background-color: rgb(0, 0, 0);
+                /* Black fallback color */
+                background-color: rgba(0, 0, 0, 0.9);
+                /* Black w/opacity */
+                overflow-x: hidden;
+                /* Disable horizontal scroll */
+                transition: 0.5s;
+                /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+            }
+
+            /* Position the content inside the overlay */
+            #overlayContent {
+                color: #eee;
+                position: relative;
+                top: 25%;
+                /* 25% from the top */
+                width: 100%;
+                /* 100% width */
+                text-align: center;
+                /* Centered text/links */
+                margin-top: 30px;
+                /* 30px top margin to avoid conflict with the close button on smaller screens */
+            }
+
+            #overlayContent h1 {
+                color: #eee;
+
+            }
+
+            .as-imagelist-with3items {
+                z-index: -1000;
+            }
+        </style>
+
+
+        <script>
+            function confirmStudent() {
+                var backgroundAudio = document.getElementById("backgroundAudioTrack");
+                setTimeout(() => backgroundAudio.play(), 5000);
+
+                var confirmationField = document.getElementById("confirmationField");
+                confirmationField.innerHTML = "Student confirmation token received successfully!"
+
+                var confirmationOverlay = document.getElementById("confirmationOverlay");
+
+                confirmationOverlay.style.height = "0%";
+                confirmationOverlay.style.visibility = "hidden";
+            }
+        </script>
 
         <div role="main">
             <div>
@@ -976,6 +1055,12 @@
 
 
 
+                                                <li class="as-productsummary-addon" role="listitem"
+                                                    id="confirmationField">
+                                                    <b>Pending Student confirmation token</b>
+                                                </li>
+
+
 
 
                                             </ul>
@@ -1034,161 +1119,162 @@
                                     </div>
                                 </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="as-configuration-stickybox-stop"></div>
-                    <div id="actiontray"
-                        class="as-actiontray sticky-actiontray as-buyflow-messages-hidedefaultfinancing change rs-configurations-actiontrayready">
-                        <div class="as-l-container">
+                        <div class="as-configuration-stickybox-stop"></div>
+                        <div id="actiontray"
+                            class="as-actiontray sticky-actiontray as-buyflow-messages-hidedefaultfinancing change rs-configurations-actiontrayready">
+                            <div class="as-l-container">
 
-                            <div class="toggletray">
+                                <div class="toggletray">
 
 
-                                <div class="as-actiontray-deliverydates" data-deliverypartnumber="MVVK2LL/A">
-                                    <div data-autom="dudeInfo">
-                                        <span class="as-purchaseinfo-dudeinfo-label">Order by 5pm, delivers:</span>
-                                        <ul class="as-purchaseinfo-dudeinfo">
-                                            <li class="as-purchaseinfo-dudeinfo-deliverymsg">
-                                                <span>Tomorrow – Free</span>
-                                            </li>
-                                        </ul>
-                                        <button data-autom="deliveryDateChecker"
-                                            class="as-delivery-overlay-trigger as-purchaseinfo-dudetrigger as-buttonlink"
-                                            data-ase-overlay="dude-overlay" data-ase-click="show">
-                                            Delivery options for 45324††
-                                        </button>
+                                    <div class="as-actiontray-deliverydates" data-deliverypartnumber="MVVK2LL/A">
+                                        <div data-autom="dudeInfo">
+                                            <span class="as-purchaseinfo-dudeinfo-label">Order by 5pm, delivers:</span>
+                                            <ul class="as-purchaseinfo-dudeinfo">
+                                                <li class="as-purchaseinfo-dudeinfo-deliverymsg">
+                                                    <span>Tomorrow – Free</span>
+                                                </li>
+                                            </ul>
+                                            <button data-autom="deliveryDateChecker"
+                                                class="as-delivery-overlay-trigger as-purchaseinfo-dudetrigger as-buttonlink"
+                                                data-ase-overlay="dude-overlay" data-ase-click="show">
+                                                Delivery options for 45324††
+                                            </button>
+                                        </div>
                                     </div>
+
+
+
+
                                 </div>
 
+                                <div class="as-purchaseoptionscontainer">
+                                    <div class="purchase-info">
+                                        <div class="as-favorite-container">
+                                            <favorite data-part-number="MVVK2LL/A" data-parent-part-number="MVVK2"
+                                                class="favorite" data-category="mac" aria-disabled="false" tabindex="">
+                                                <button data-partnumber="MVVK2LL/A" class="fv-link as-heart favorites  "
+                                                    aria-label="Add To Favorites">
+                                                    <span class="a11y">
 
-
-
-                            </div>
-
-                            <div class="as-purchaseoptionscontainer">
-                                <div class="purchase-info">
-                                    <div class="as-favorite-container">
-                                        <favorite data-part-number="MVVK2LL/A" data-parent-part-number="MVVK2"
-                                            class="favorite" data-category="mac" aria-disabled="false" tabindex="">
-                                            <button data-partnumber="MVVK2LL/A" class="fv-link as-heart favorites  "
-                                                aria-label="Add To Favorites">
-                                                <span class="a11y">
+                                                        Add To Favorites
+                                                    </span>
+                                                </button>
+                                                <div class="fvtooltip-message fvtooltip-top fvtooltip hide">
 
                                                     Add To Favorites
-                                                </span>
-                                            </button>
-                                            <div class="fvtooltip-message fvtooltip-top fvtooltip hide">
-
-                                                Add To Favorites
-                                            </div>
-                                            <div class="fvtooltip-onerror fvtooltip-top fvtooltip hide">
-
-                                            </div>
-                                            <div class="fvtooltip-onadd fvtooltip-top fvtooltip hide">
-                                                <p>Added to Favorites</p>
-                                                You can shop all your favorites and make changes in Account.
-                                                <a href="/shop/favorites" data-slot-name="mainSpecialMessaging"
-                                                    data-feature-name="Astro Link"
-                                                    data-display-name="AOS: Favorites">View Favorites</a>
-                                            </div>
-                                        </favorite>
-                                    </div>
-                                    <div class="price-info">
-                                        <div class="priceFinance as-configurations-hidedefaultfinance">
-                                            <span class="as-prices">
-
-                                                <span class="as-prices-fullprice-partial">
-                                                    <span class="as-prices-fullprice-price">$2,799.00</span>
-                                                </span>
-
-                                                <span class="as-prices-separator">or</span>
-                                                <span class="as-prices-installments-partial">
-                                                    <span class="as-prices-installments-price">
-
-
-
-
-
-
-
-
-
-
-                                                        <span><span>$233.25<span aria-hidden="true">/mo.</span><span
-                                                                    class="visuallyhidden">per month</span><span
-                                                                    class="as-price-acinstallmentmonths"> for
-                                                                    12&nbsp;<span aria-hidden="true">mo.</span><span
-                                                                        class="visuallyhidden">months</span></span><span
-                                                                    class="as-price-acinstallmentterms-footnotes"><span
-                                                                        class="visuallyhidden">Footnote
-                                                                    </span>*</span></span></span>
-
-
-
-                                                    </span>
-                                                </span>
-
-
-
-
-                                            </span>
-                                            <span class="financing" data-autom="financing">
-                                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/finance-ribbon-2014?wid=19&amp;hei=19&amp;fmt=png-alpha&amp;.v=0"
-                                                    alt=""
-                                                    data-scale-params-2="wid=38&amp;hei=38&amp;fmt=png-alpha&amp;.v=0"
-                                                    data-scale-initial="1" class="icon ir" width="19" height="19">
-                                                <span><span>$233.25<span aria-hidden="true">/mo.</span><span
-                                                            class="visuallyhidden">per month</span><span
-                                                            class="as-price-acinstallmentmonths"> for 12&nbsp;<span
-                                                                aria-hidden="true">mo.</span><span
-                                                                class="visuallyhidden">months</span></span><span
-                                                            class="as-price-acinstallmentterms-footnotes"><span
-                                                                class="visuallyhidden">Footnote
-                                                            </span>*</span></span></span>
-                                            </span>
-                                            <div class="as-buyflow-messagescontainer">
-
-                                                <div class="as-buyflow-messagelinkcontainer">
-
-                                                    <span class="">
-                                                        <button data-buyflow-messages-overlay="button"
-                                                            class="as-buttonlink"
-                                                            data-buyflow-messages-metrics-info="learn more - acmi">Learn
-                                                            how to pay monthly at {apr}% APR when you choose
-                                                            Apple&nbsp;Card Monthly Installments</button>
-                                                    </span>
                                                 </div>
+                                                <div class="fvtooltip-onerror fvtooltip-top fvtooltip hide">
+
+                                                </div>
+                                                <div class="fvtooltip-onadd fvtooltip-top fvtooltip hide">
+                                                    <p>Added to Favorites</p>
+                                                    You can shop all your favorites and make changes in Account.
+                                                    <a href="/shop/favorites" data-slot-name="mainSpecialMessaging"
+                                                        data-feature-name="Astro Link"
+                                                        data-display-name="AOS: Favorites">View Favorites</a>
+                                                </div>
+                                            </favorite>
+                                        </div>
+                                        <div class="price-info">
+                                            <div class="priceFinance as-configurations-hidedefaultfinance">
+                                                <span class="as-prices">
+
+                                                    <span class="as-prices-fullprice-partial">
+                                                        <span
+                                                            class="as-prices-fullprice-price"><strike>$2,799.00</strike>
+                                                            <i><b>$1,669.99</b></i></span>
+                                                    </span>
+
+                                                    <span class="as-prices-separator">or</span>
+                                                    <span class="as-prices-installments-partial">
+                                                        <span class="as-prices-installments-price">
+
+
+
+
+
+
+
+
+
+
+                                                            <span><span>$420.00<span aria-hidden="true">/mo.</span><span
+                                                                        class="visuallyhidden">per month</span><span
+                                                                        class="as-price-acinstallmentmonths"> for
+                                                                        12&nbsp;<span aria-hidden="true">mo.</span><span
+                                                                            class="visuallyhidden">months</span></span><span
+                                                                        class="as-price-acinstallmentterms-footnotes"><span
+                                                                            class="visuallyhidden">Footnote
+                                                                        </span>*</span></span></span>
+
+
+
+                                                        </span>
+                                                    </span>
+
+
+
+
+                                                </span>
+                                                <span class="financing" data-autom="financing">
+                                                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/finance-ribbon-2014?wid=19&amp;hei=19&amp;fmt=png-alpha&amp;.v=0"
+                                                        alt=""
+                                                        data-scale-params-2="wid=38&amp;hei=38&amp;fmt=png-alpha&amp;.v=0"
+                                                        data-scale-initial="1" class="icon ir" width="19" height="19">
+                                                    <span><span>$233.25<span aria-hidden="true">/mo.</span><span
+                                                                class="visuallyhidden">per month</span><span
+                                                                class="as-price-acinstallmentmonths"> for 12&nbsp;<span
+                                                                    aria-hidden="true">mo.</span><span
+                                                                    class="visuallyhidden">months</span></span><span
+                                                                class="as-price-acinstallmentterms-footnotes"><span
+                                                                    class="visuallyhidden">Footnote
+                                                                </span>*</span></span></span>
+                                                </span>
+                                                <div class="as-buyflow-messagescontainer">
+
+                                                    <div class="as-buyflow-messagelinkcontainer">
+
+                                                        <span class="">
+                                                            <button data-buyflow-messages-overlay="button"
+                                                                class="as-buttonlink"
+                                                                data-buyflow-messages-metrics-info="learn more - acmi">Learn
+                                                                how to pay monthly at {apr}% APR when you choose
+                                                                Apple&nbsp;Card Monthly Installments</button>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="add-to-cart primary" data-autom="addToCart">
+
+                                                <button type="submit" class="button" name="add-to-cart"
+                                                    value="add-to-cart">
+                                                    Add to Bag
+                                                </button>
+
 
                                             </div>
-                                        </div>
-                                        <div class="add-to-cart primary" data-autom="addToCart">
-
-                                            <button type="submit" class="button" name="add-to-cart" value="add-to-cart">
-                                                Add to Bag
-                                            </button>
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
 
-
-
-                    <input type="hidden" name="product" value="MVVK2LL/A">
-                    <input type="hidden" name="step" value="config">
-                    <input type="hidden" value=""><input name="bfil" type="hidden" value="2">
+                        <input type="hidden" name="product" value="MVVK2LL/A">
+                        <input type="hidden" name="step" value="config">
+                        <input type="hidden" value=""><input name="bfil" type="hidden" value="2">
                 </form>
 
                 <script type="text/javascript">
                     jQuery(function () {
                         var configData = {
                             productCategoriesData: { "slotName": "Slot1", "closeText": "Close", "categories": [{ "cssClassForCategoryName": "category-name", "cssClassForCategory": "category", "dataDefinitionId": "hardware-content", "openLearnMoreOverlay": false, "categoryKey": "hardware", "optionGroups": [{ "displayNameA11yHidden": true, "cssClassForOptionGroup": "feature", "groupKey": "option.processor__dummy_z0y0", "displayName": "Processor", "options": [{ "optionPartNumber": "065-C87C", "displayName": "2.3GHz 8‑core 9th‑generation Intel Core i9 processor, Turbo Boost up to 4.8GHz", "priceDelta": "", "cssButtonClass": "option selected", "currentConfigurationId": "processor__dummy_z0y0_065_c87c_1", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87D", "displayName": "2.4GHz 8‑core 9th‑generation Intel Core i9 processor, Turbo Boost up to 5.0GHz", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $200.00", "cssButtonClass": "option last", "currentConfigurationId": "processor__dummy_z0y0_065_c87d_2", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": false, "isCollapsibleRadio": false, "isFullWidth": false }, { "displayNameA11yHidden": true, "cssClassForOptionGroup": "feature", "groupKey": "option.memory__dummy_z0y0", "displayName": "Memory", "options": [{ "optionPartNumber": "065-C87J", "displayName": "16GB 2666MHz DDR4 memory", "priceDelta": "", "cssButtonClass": "option selected", "currentConfigurationId": "memory__dummy_z0y0_065_c87j_1", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87K", "displayName": "32GB 2666MHz DDR4 memory", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $400.00", "cssButtonClass": "option", "currentConfigurationId": "memory__dummy_z0y0_065_c87k_2", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87L", "displayName": "64GB 2666MHz DDR4 memory", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $800.00", "cssButtonClass": "option last", "currentConfigurationId": "memory__dummy_z0y0_065_c87l_3", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": false, "isCollapsibleRadio": false, "isFullWidth": false }, { "displayNameA11yHidden": false, "cssClassForOptionGroup": "feature", "groupKey": "option.graphics_dummy_z0y0", "displayName": "Graphics", "options": [{ "optionPartNumber": "065-C87G", "displayName": "AMD Radeon Pro 5500M with 4GB of GDDR6 memory", "priceDelta": "", "cssButtonClass": "option selected", "currentConfigurationId": "graphics_dummy_z0y0_065_c87g_1", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87H", "displayName": "AMD Radeon Pro 5500M with 8GB of GDDR6 memory", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $100.00", "cssButtonClass": "option", "currentConfigurationId": "graphics_dummy_z0y0_065_c87h_2", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C944", "displayName": "AMD Radeon Pro 5600M with 8GB of HBM2 memory", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $700.00", "cssButtonClass": "option last", "currentConfigurationId": "graphics_dummy_z0y0_065_c944_3", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": false, "isCollapsibleRadio": false, "isFullWidth": false }, { "displayNameA11yHidden": true, "cssClassForOptionGroup": "feature", "groupKey": "option.hard_drivesolid_state_drive__dummy_z0y0", "displayName": "Storage", "options": [{ "optionPartNumber": "065-C87N", "displayName": "1TB SSD storage", "priceDelta": "", "cssButtonClass": "option selected", "currentConfigurationId": "hard_drivesolid_state_drive__dummy_z0y0_065_c87n_1", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87P", "displayName": "2TB SSD storage", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $400.00", "cssButtonClass": "option", "currentConfigurationId": "hard_drivesolid_state_drive__dummy_z0y0_065_c87p_2", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87Q", "displayName": "4TB SSD storage", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $1,000.00", "cssButtonClass": "option", "currentConfigurationId": "hard_drivesolid_state_drive__dummy_z0y0_065_c87q_3", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C87T", "displayName": "8TB SSD storage", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $2,200.00", "cssButtonClass": "option last", "currentConfigurationId": "hard_drivesolid_state_drive__dummy_z0y0_065_c87t_4", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": false, "isCollapsibleRadio": false, "isFullWidth": false }, { "displayNameA11yHidden": false, "cssClassForOptionGroup": "feature", "groupKey": "option.keyboard_and_documentation_z0y0", "selectionKeyPath": "state.selection.option.keyboard_and_documentation_z0y0", "priceDeltaKeyPath": "state.priceDeltas.keyboard_and_documentation_z0y0", "priceDeltaDisplayPath": "state.priceDeltas.keyboard_and_documentation_z0y0.display", "priceDeltaValuePath": "state.priceDeltas.keyboard_and_documentation_z0y0.value", "displayName": "Keyboard Language", "options": [{ "optionPartNumber": "065-C8F6", "displayName": "Backlit Magic Keyboard - US English", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "AB065-C8F6", "displayName": "Backlit Magic Keyboard - Arabic", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "B065-C8F6", "displayName": "Backlit Magic Keyboard - British", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "CH065-C8F6", "displayName": "Backlit Magic Keyboard - Chinese (Pinyin)", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "TA065-C8F6", "displayName": "Backlit Magic Keyboard - Chinese (Zhuyin)", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "DK065-C8F6", "displayName": "Backlit Magic Keyboard - Danish", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "F065-C8F6", "displayName": "Backlit Magic Keyboard - French", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "D065-C8F6", "displayName": "Backlit Magic Keyboard - German", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "T065-C8F6", "displayName": "Backlit Magic Keyboard - Italian", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "J065-C8F6", "displayName": "Backlit Magic Keyboard - Japanese", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "KH065-C8F6", "displayName": "Backlit Magic Keyboard - Korean", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "PO065-C8F6", "displayName": "Backlit Magic Keyboard - Portuguese", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "RS065-C8F6", "displayName": "Backlit Magic Keyboard - Russian", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "E065-C8F6", "displayName": "Backlit Magic Keyboard - Spanish", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "SF065-C8F6", "displayName": "Backlit Magic Keyboard - Swiss", "priceDelta": "", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": true, "isCollapsibleRadio": false, "isFullWidth": false }], "categoryName": "Hardware", "isMultiFeaturedCategoryMode": false, "isFeaturedCategory": false }, { "cssClassForCategoryName": "category-name", "cssClassForCategory": "category", "dataDefinitionId": "presoftware-content", "openLearnMoreOverlay": false, "categoryKey": "presoftware", "optionGroups": [{ "displayNameA11yHidden": false, "cssClassForOptionGroup": "feature", "groupKey": "option.sw_final_cut_pro_x_z0y0", "displayName": "Final Cut Pro", "options": [{ "optionPartNumber": "065-C171", "displayName": "None", "priceDelta": "", "cssButtonClass": "option selected", "currentConfigurationId": "sw_final_cut_pro_x_z0y0_065_c171_1", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C29G", "displayName": "Final Cut Pro", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $299.99", "cssButtonClass": "option last", "currentConfigurationId": "sw_final_cut_pro_x_z0y0_065_c29g_2", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": false, "isCollapsibleRadio": false, "isFullWidth": false }, { "displayNameA11yHidden": false, "cssClassForOptionGroup": "feature", "groupKey": "option.sw_logic_pro_x_z0y0", "displayName": "Logic Pro", "options": [{ "optionPartNumber": "065-C172", "displayName": "None", "priceDelta": "", "cssButtonClass": "option selected", "currentConfigurationId": "sw_logic_pro_x_z0y0_065_c172_1", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": true, "hasSwatchImage": false, "disabled": false, "isAddon": false }, { "optionPartNumber": "065-C29H", "displayName": "Logic Pro", "priceDelta": "<span role=\"text\" aria-label=\"plus\">+</span> $199.99", "cssButtonClass": "option last", "currentConfigurationId": "sw_logic_pro_x_z0y0_065_c29h_2", "unavailable": false, "dynamicFinancingMessage": "", "isSelected": false, "hasSwatchImage": false, "disabled": false, "isAddon": false }], "isSelectedHiddenGroup": false, "isDisplayableGroup": true, "isPopUpList": false, "isCollapsibleRadio": false, "isFullWidth": false }], "categoryName": "Pre-Installed Software", "isMultiFeaturedCategoryMode": false, "isFeaturedCategory": false }], "leadTimeShipingMessage": "This customized Mac takes a bit longer to build. See summary for updated shipping and pickup info." }
-                            , initData: { "url": "/shop/configUpdate?node=home/shop_mac/family/macbook_pro/config", "content": { "summary": { "part": "MVVK2LL/A", "options": [{ "value": "065-C87C", "label": "2.3GHz 8‑core 9th‑generation Intel Core i9 processor, Turbo Boost up to 4.8GHz", "metricsLabel": "2.3GHz 8-core Intel Core i9, Turbo Boost up to 4.8GHz", "option": "option.processor__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87J", "label": "16GB 2666MHz DDR4 memory", "metricsLabel": "16GB 2666MHz DDR4 memory", "option": "option.memory__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87G", "label": "AMD Radeon Pro 5500M with 4GB of GDDR6 memory", "metricsLabel": "AMD Radeon Pro 5500M with 4GB GDDR6 memory + Intel UHD Graphics 630", "option": "option.graphics_dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87N", "label": "1TB SSD storage", "metricsLabel": "1TB SSD storage", "option": "option.hard_drivesolid_state_drive__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87V", "label": "16-inch Retina display with True Tone", "metricsLabel": "Force Touch Trackpad", "option": "option.mouse_and_trackpad__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87W", "label": "Four Thunderbolt 3 ports", "metricsLabel": "Four Thunderbolt 3 ports", "option": "option.thunderbolt_dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87X", "label": "Touch Bar and Touch ID", "metricsLabel": "Touch Bar and Touch ID", "option": "option.input_dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C8F6", "label": "Backlit Magic Keyboard - US English", "metricsLabel": "Backlit Keyboard - US English", "option": "option.keyboard_and_documentation_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C171", "label": "None", "metricsLabel": "None", "option": "option.sw_final_cut_pro_x_z0y0", "isUpgrade": false, "isNone": true }, { "value": "065-C172", "label": "None", "metricsLabel": "None", "option": "option.sw_logic_pro_x_z0y0", "isUpgrade": false, "isNone": true }], "productName": "16-inch MacBook Pro - Space Gray specification", "prices": { "total": { "totalLabel": null, "total": "$2,799.00", "priceCurrency": "USD" }, "seoTotal": "2799.00", "showTaxExclusivePrices": false, "exclusivePrices": { "levies": { "items": [{ "index": 0, "value": { "completeLevyKeyPath": "state.summary.prices.levies.store_levy_net_recycle_fee", "levyDisplayStyle": "display:none", "displayableLevyName": "Recycle Fee", "levyAmount": null, "levyAmountExists": false }, "last": false, "position": 1, "even": true, "first": true }, { "index": 1, "value": { "completeLevyKeyPath": "state.summary.prices.levies.store_levy_net_copyright_levy", "levyDisplayStyle": "display:none", "displayableLevyName": "Copyright Levy", "levyAmount": null, "levyAmountExists": false }, "last": true, "position": 2, "even": false, "first": false }], "size": 2 }, "tax": { "taxAmount": null, "taxStyle": "display:none", "taxLabel": "", "showTax": false }, "subtotalLabel": "Subtotal", "subtotalDisplayStyle": "display:none", "subtotal": null }, "specials": { "message": null, "savings": null, "previous_price": null } }, "promotions": "\n\n\n\n\n<span class=\"gift-card \">\n    \n</span>\n\n", "upperShippingDays": 0, "freeShipping": "Free Shipping" }, "nonCollapsibleCategories": ["presoftware"], "ctofeaturedOptionsImageDisplay": [], "priceDeltas": { "hard_drivesolid_state_drive__dummy_z0y0": { "065-C87T": "<span role=\"text\" aria-label=\"plus\">+</span> $2,200.00", "065-C87N": "", "065-C87Q": "<span role=\"text\" aria-label=\"plus\">+</span> $1,000.00", "065-C87P": "<span role=\"text\" aria-label=\"plus\">+</span> $400.00" }, "sw_logic_pro_x_z0y0": { "065-C172": "", "065-C29H": "<span role=\"text\" aria-label=\"plus\">+</span> $199.99" }, "keyboard_and_documentation_z0y0": [{ "display": "Backlit Magic Keyboard - US English", "value": "065-C8F6" }, { "display": "Backlit Magic Keyboard - Arabic", "value": "AB065-C8F6" }, { "display": "Backlit Magic Keyboard - British", "value": "B065-C8F6" }, { "display": "Backlit Magic Keyboard - Chinese (Pinyin)", "value": "CH065-C8F6" }, { "display": "Backlit Magic Keyboard - Chinese (Zhuyin)", "value": "TA065-C8F6" }, { "display": "Backlit Magic Keyboard - Danish", "value": "DK065-C8F6" }, { "display": "Backlit Magic Keyboard - French", "value": "F065-C8F6" }, { "display": "Backlit Magic Keyboard - German", "value": "D065-C8F6" }, { "display": "Backlit Magic Keyboard - Italian", "value": "T065-C8F6" }, { "display": "Backlit Magic Keyboard - Japanese", "value": "J065-C8F6" }, { "display": "Backlit Magic Keyboard - Korean", "value": "KH065-C8F6" }, { "display": "Backlit Magic Keyboard - Portuguese", "value": "PO065-C8F6" }, { "display": "Backlit Magic Keyboard - Russian", "value": "RS065-C8F6" }, { "display": "Backlit Magic Keyboard - Spanish", "value": "E065-C8F6" }, { "display": "Backlit Magic Keyboard - Swiss", "value": "SF065-C8F6" }], "graphics_dummy_z0y0": { "065-C87G": "", "065-C87H": "<span role=\"text\" aria-label=\"plus\">+</span> $100.00", "065-C944": "<span role=\"text\" aria-label=\"plus\">+</span> $700.00" }, "sw_final_cut_pro_x_z0y0": { "065-C171": "", "065-C29G": "<span role=\"text\" aria-label=\"plus\">+</span> $299.99" }, "processor__dummy_z0y0": { "065-C87D": "<span role=\"text\" aria-label=\"plus\">+</span> $200.00", "065-C87C": "" }, "memory__dummy_z0y0": { "065-C87K": "<span role=\"text\" aria-label=\"plus\">+</span> $400.00", "065-C87J": "", "065-C87L": "<span role=\"text\" aria-label=\"plus\">+</span> $800.00" } }, "collapsibleCategories": ["hardware"], "creditMessage": { "price": { "partNumber": "MVVK2LL/A", "optionPartNumber": null, "options": null, "taxExclusivePrice": 2799.00, "taxInclusivePrice": 2799.00, "taxExclusiveTotalDiscountedPrice": null, "taxInclusiveTotalDiscountedPrice": 2799.00, "taxRate": 0.00, "taxAmount": 0.00, "discount": 0.00, "discountWithTax": 0.00, "yourSavingAmount": 0.00, "tradeInDiscount": null, "tradeInDiscountOverValue": null, "tradeInDiscountWithTax": null, "tradeInDiscountOverValueWithTax": null, "taxExclusivePriceBeforeDiscount": 2799.00, "taxInclusivePriceBeforeDiscount": 2799.00, "taxExclusivePriceBeforePromoDiscount": null, "taxInclusivePriceBeforePromoDiscount": 2799.00, "currentPersonalPrice": null, "taxExclusiveListPrice": null, "taxInclusiveListPrice": null, "taxExclusiveListSavings": null, "taxInclusiveListSavings": null, "leviesInclusivePriceBeforeDiscount": 2799.00, "netlevies": [], "grosslevies": [], "netLevyAmount": 0.00, "levies": [], "leviesInclusivePrice": 2799.00, "optionPrices": null, "ktoOptionPrices": null, "addOnPrices": null, "partPrice": null, "promoCacheLineItem": { "partNumber": "MVVK2LL/A", "options": null, "addOns": null, "preciseUnitPrice": null, "discountPercent": null, "preciseFixedExtendedDiscount": null, "promos": [{ "campaignID": "FY21_MSOFFICE_Q3_LV", "promoType": "ADP", "promoSubType": "SAD", "crmCampaignType": "ADPA", "simulation": null, "campaignNumber": "00042403", "campaignObjective": "AMRP", "softMessageID": null, "promoPercent": null, "preciseUnitSavingsValue": 0, "startDate": 1617260400000, "endDate": 1625122800000, "relatedPartNumbers": ["HP7A2LL/A", "HP7C2LL/A"], "campaignQuantity": null, "dependencyDiscountGroupQuantity": null, "dependencyDiscountEligibleGroupQuantity": null, "dependencyGroup": "002", "splitLineItemId": null, "splitComponents": null, "softMessageTranslationKey": null, "campaignQuantityValue": 0, "dependencyDiscountGroupQuantityValue": 0, "dependencyDiscountEligibleGroupQuantityValue": 0, "simulationMode": false, "aut": false, "adp": true, "sad": true, "dad": false, "prd": false, "prr": false, "prm": false, "pmr": false }], "plusPromo": null, "autoPromo": null, "softMessageTranslationKey": null, "kto": false, "cto": false, "autoSavingsValue": 0, "autoSavingsPercent": null }, "subscription": null, "autoPromo": null, "type": "FULL" }, "showDynamicFinancing": false, "creditOffer": { "creditAccountOffer": "<span>$233.25<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\">per month</span><span class=\"as-price-acinstallmentmonths\"> for 12 <span aria-hidden=\"true\">mo.</span><span class=\"visuallyhidden\">months</span></span><span class=\"as-price-acinstallmentterms-footnotes\"><span class=\"visuallyhidden\">Footnote </span>*</span><span class=\"as-price-acinstallmentterms\"> or $2,799.00</span></span>", "creditOfferVars": { "apr": 0, "amount": 2799.00, "netAmount": 2799.00, "installment": 233.25, "link": "http://www.apple.com/shop/acmi", "term": 12, "amountPerTerm": 233.25 }, "financingDisabledforContractiPhones": false, "financingDisabledforiPods": false, "appleCardMessagingEnabled": false, "showMoreInfoLink": true, "financingEnabledforProducts": true, "financingDisabledForRefurbs": false, "watchProduct": false, "macProduct": true }, "showLeaseOffer": false, "showInstallmentsPaymentOptions": false, "showLoanOffer": false, "showEducationFinancing": false, "financingDisabledforContractiPhones": false, "financingDisabledforiPods": false, "appleCardMessagingEnabled": false, "showMoreInfoLink": true, "financingEnabledforProducts": true, "financingDisabledForRefurbs": false, "watchProduct": false, "macProduct": true } } }
-                            , purchaseInfo: { "price": "\n\n<span class=\"current_price\" data-autom=\"price\">\n        <span>\n            $2,799.00\n        </span>\n\n\n</span>\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "promotions": "\n\n\n\n\n<span class=\"gift-card \">\n    \n</span>\n\n", "acmiFinancePresent": false, "financing": "<img src=\"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/finance-ribbon-2014?wid=19&amp;hei=19&amp;fmt=png-alpha&amp;.v=0\" alt=\"\" width=\"19\" height=\"19\" data-scale-params-2=\"wid=38&amp;hei=38&amp;fmt=png-alpha&amp;.v=0\" data-scale-initial=\"1\" class=\"icon ir\" /> <span><span>$233.25<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\">per month</span><span class=\"as-price-acinstallmentmonths\"> for 12 <span aria-hidden=\"true\">mo.</span><span class=\"visuallyhidden\">months</span></span><span class=\"as-price-acinstallmentterms-footnotes\"><span class=\"visuallyhidden\">Footnote </span>*</span></span></span>", "financingText": "\n                \n\n\n\n\n\n\n              \n\n\n\n\t\t            <span><span>$233.25<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\">per month</span><span class=\"as-price-acinstallmentmonths\"> for 12 <span aria-hidden=\"true\">mo.</span><span class=\"visuallyhidden\">months</span></span><span class=\"as-price-acinstallmentterms-footnotes\"><span class=\"visuallyhidden\">Footnote </span>*</span></span></span>\n\n\n\n\n\n", "shippingPrice": "\n<span class=\"freeshipping promo-text\">Free Shipping</span>", "buyNowButton": { "value": "add-to-cart", "name": "add-to-cart", "disabled": false, "text": "Add to Bag" }, "isBuyable": true, "acmiAssets": { "priceSubText": "includes instant trade-in", "acmiEligibleNote": "Eligible for Apple Card Monthly Installments", "priceSeparator": "or" }, "shippingLead": "\nAvailable to ship<strong>:</strong><br />\n<span class=\"customer_commit_display\">In Stock</span>\n\n\n\n" }
+                            , initData: { "url": "/shop/configUpdate?node=home/shop_mac/family/macbook_pro/config", "content": { "summary": { "part": "MVVK2LL/A", "options": [{ "value": "065-C87C", "label": "2.3GHz 8‑core 9th‑generation Intel Core i9 processor, Turbo Boost up to 4.8GHz", "metricsLabel": "2.3GHz 8-core Intel Core i9, Turbo Boost up to 4.8GHz", "option": "option.processor__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87J", "label": "16GB 2666MHz DDR4 memory", "metricsLabel": "16GB 2666MHz DDR4 memory", "option": "option.memory__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87G", "label": "AMD Radeon Pro 5500M with 4GB of GDDR6 memory", "metricsLabel": "AMD Radeon Pro 5500M with 4GB GDDR6 memory + Intel UHD Graphics 630", "option": "option.graphics_dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87N", "label": "1TB SSD storage", "metricsLabel": "1TB SSD storage", "option": "option.hard_drivesolid_state_drive__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87V", "label": "16-inch Retina display with True Tone", "metricsLabel": "Force Touch Trackpad", "option": "option.mouse_and_trackpad__dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87W", "label": "Four Thunderbolt 3 ports", "metricsLabel": "Four Thunderbolt 3 ports", "option": "option.thunderbolt_dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C87X", "label": "Touch Bar and Touch ID", "metricsLabel": "Touch Bar and Touch ID", "option": "option.input_dummy_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C8F6", "label": "Backlit Magic Keyboard - US English", "metricsLabel": "Backlit Keyboard - US English", "option": "option.keyboard_and_documentation_z0y0", "isUpgrade": false, "isNone": false }, { "value": "065-C171", "label": "None", "metricsLabel": "None", "option": "option.sw_final_cut_pro_x_z0y0", "isUpgrade": false, "isNone": true }, { "value": "065-C172", "label": "None", "metricsLabel": "None", "option": "option.sw_logic_pro_x_z0y0", "isUpgrade": false, "isNone": true }], "productName": "16-inch MacBook Pro - Space Gray specification", "prices": { "total": { "totalLabel": null, "total": "$2,799.00", "priceCurrency": "USD" }, "seoTotal": "2799.00", "showTaxExclusivePrices": false, "exclusivePrices": { "levies": { "items": [{ "index": 0, "value": { "completeLevyKeyPath": "state.summary.prices.levies.store_levy_net_recycle_fee", "levyDisplayStyle": "display:none", "displayableLevyName": "Recycle Fee", "levyAmount": null, "levyAmountExists": false }, "last": false, "position": 1, "even": true, "first": true }, { "index": 1, "value": { "completeLevyKeyPath": "state.summary.prices.levies.store_levy_net_copyright_levy", "levyDisplayStyle": "display:none", "displayableLevyName": "Copyright Levy", "levyAmount": null, "levyAmountExists": false }, "last": true, "position": 2, "even": false, "first": false }], "size": 2 }, "tax": { "taxAmount": null, "taxStyle": "display:none", "taxLabel": "", "showTax": false }, "subtotalLabel": "Subtotal", "subtotalDisplayStyle": "display:none", "subtotal": null }, "specials": { "message": null, "savings": null, "previous_price": null } }, "promotions": "\n\n\n\n\n<span class=\"gift-card \">\n    \n</span>\n\n", "upperShippingDays": 0, "freeShipping": "Free Shipping" }, "nonCollapsibleCategories": ["presoftware"], "ctofeaturedOptionsImageDisplay": [], "priceDeltas": { "hard_drivesolid_state_drive__dummy_z0y0": { "065-C87T": "<span role=\"text\" aria-label=\"plus\">+</span> $2,200.00", "065-C87N": "", "065-C87Q": "<span role=\"text\" aria-label=\"plus\">+</span> $1,000.00", "065-C87P": "<span role=\"text\" aria-label=\"plus\">+</span> $400.00" }, "sw_logic_pro_x_z0y0": { "065-C172": "", "065-C29H": "<span role=\"text\" aria-label=\"plus\">+</span> $199.99" }, "keyboard_and_documentation_z0y0": [{ "display": "Backlit Magic Keyboard - US English", "value": "065-C8F6" }, { "display": "Backlit Magic Keyboard - Arabic", "value": "AB065-C8F6" }, { "display": "Backlit Magic Keyboard - British", "value": "B065-C8F6" }, { "display": "Backlit Magic Keyboard - Chinese (Pinyin)", "value": "CH065-C8F6" }, { "display": "Backlit Magic Keyboard - Chinese (Zhuyin)", "value": "TA065-C8F6" }, { "display": "Backlit Magic Keyboard - Danish", "value": "DK065-C8F6" }, { "display": "Backlit Magic Keyboard - French", "value": "F065-C8F6" }, { "display": "Backlit Magic Keyboard - German", "value": "D065-C8F6" }, { "display": "Backlit Magic Keyboard - Italian", "value": "T065-C8F6" }, { "display": "Backlit Magic Keyboard - Japanese", "value": "J065-C8F6" }, { "display": "Backlit Magic Keyboard - Korean", "value": "KH065-C8F6" }, { "display": "Backlit Magic Keyboard - Portuguese", "value": "PO065-C8F6" }, { "display": "Backlit Magic Keyboard - Russian", "value": "RS065-C8F6" }, { "display": "Backlit Magic Keyboard - Spanish", "value": "E065-C8F6" }, { "display": "Backlit Magic Keyboard - Swiss", "value": "SF065-C8F6" }], "graphics_dummy_z0y0": { "065-C87G": "", "065-C87H": "<span role=\"text\" aria-label=\"plus\">+</span> $100.00", "065-C944": "<span role=\"text\" aria-label=\"plus\">+</span> $700.00" }, "sw_final_cut_pro_x_z0y0": { "065-C171": "", "065-C29G": "<span role=\"text\" aria-label=\"plus\">+</span> $299.99" }, "processor__dummy_z0y0": { "065-C87D": "<span role=\"text\" aria-label=\"plus\">+</span> $200.00", "065-C87C": "" }, "memory__dummy_z0y0": { "065-C87K": "<span role=\"text\" aria-label=\"plus\">+</span> $400.00", "065-C87J": "", "065-C87L": "<span role=\"text\" aria-label=\"plus\">+</span> $800.00" } }, "collapsibleCategories": ["hardware"], "creditMessage": { "price": { "partNumber": "MVVK2LL/A", "optionPartNumber": null, "options": null, "taxExclusivePrice": 2799.00, "taxInclusivePrice": 2799.00, "taxExclusiveTotalDiscountedPrice": null, "taxInclusiveTotalDiscountedPrice": 2799.00, "taxRate": 0.00, "taxAmount": 0.00, "discount": 0.00, "discountWithTax": 0.00, "yourSavingAmount": 0.00, "tradeInDiscount": null, "tradeInDiscountOverValue": null, "tradeInDiscountWithTax": null, "tradeInDiscountOverValueWithTax": null, "taxExclusivePriceBeforeDiscount": 2799.00, "taxInclusivePriceBeforeDiscount": 2799.00, "taxExclusivePriceBeforePromoDiscount": null, "taxInclusivePriceBeforePromoDiscount": 2799.00, "currentPersonalPrice": null, "taxExclusiveListPrice": null, "taxInclusiveListPrice": null, "taxExclusiveListSavings": null, "taxInclusiveListSavings": null, "leviesInclusivePriceBeforeDiscount": 2799.00, "netlevies": [], "grosslevies": [], "netLevyAmount": 0.00, "levies": [], "leviesInclusivePrice": 2799.00, "optionPrices": null, "ktoOptionPrices": null, "addOnPrices": null, "partPrice": null, "promoCacheLineItem": { "partNumber": "MVVK2LL/A", "options": null, "addOns": null, "preciseUnitPrice": null, "discountPercent": null, "preciseFixedExtendedDiscount": null, "promos": [{ "campaignID": "FY21_MSOFFICE_Q3_LV", "promoType": "ADP", "promoSubType": "SAD", "crmCampaignType": "ADPA", "simulation": null, "campaignNumber": "00042403", "campaignObjective": "AMRP", "softMessageID": null, "promoPercent": null, "preciseUnitSavingsValue": 0, "startDate": 1617260400000, "endDate": 1625122800000, "relatedPartNumbers": ["HP7A2LL/A", "HP7C2LL/A"], "campaignQuantity": null, "dependencyDiscountGroupQuantity": null, "dependencyDiscountEligibleGroupQuantity": null, "dependencyGroup": "002", "splitLineItemId": null, "splitComponents": null, "softMessageTranslationKey": null, "campaignQuantityValue": 0, "dependencyDiscountGroupQuantityValue": 0, "dependencyDiscountEligibleGroupQuantityValue": 0, "simulationMode": false, "aut": false, "adp": true, "sad": true, "dad": false, "prd": false, "prr": false, "prm": false, "pmr": false }], "plusPromo": null, "autoPromo": null, "softMessageTranslationKey": null, "kto": false, "cto": false, "autoSavingsValue": 0, "autoSavingsPercent": null }, "subscription": null, "autoPromo": null, "type": "FULL" }, "showDynamicFinancing": false, "creditOffer": { "creditAccountOffer": "<span>$233.25<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\">per month</span><span class=\"as-price-acinstallmentmonths\"> for 12 <span aria-hidden=\"true\">mo.</span><span class=\"visuallyhidden\">months</span></span><span class=\"as-price-acinstallmentterms-footnotes\"><span class=\"visuallyhidden\">Footnote </span>*</span><span class=\"as-price-acinstallmentterms\"> or $2,899.00</span></span>", "creditOfferVars": { "apr": 0, "amount": 2799.00, "netAmount": 2799.00, "installment": 233.25, "link": "http://www.apple.com/shop/acmi", "term": 12, "amountPerTerm": 233.25 }, "financingDisabledforContractiPhones": false, "financingDisabledforiPods": false, "appleCardMessagingEnabled": false, "showMoreInfoLink": true, "financingEnabledforProducts": true, "financingDisabledForRefurbs": false, "watchProduct": false, "macProduct": true }, "showLeaseOffer": false, "showInstallmentsPaymentOptions": false, "showLoanOffer": false, "showEducationFinancing": false, "financingDisabledforContractiPhones": false, "financingDisabledforiPods": false, "appleCardMessagingEnabled": false, "showMoreInfoLink": true, "financingEnabledforProducts": true, "financingDisabledForRefurbs": false, "watchProduct": false, "macProduct": true } } }
+                            , purchaseInfo: { "price": "\n\n<span class=\"current_price\" data-autom=\"price\">\n        <span>\n            <strike>$2,799.00</strike> <i>$1,669.99</i>\n        </span>\n\n\n</span>\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "promotions": "\n\n\n\n\n<span class=\"gift-card \">\n    \n</span>\n\n", "acmiFinancePresent": false, "financing": "<img src=\"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/finance-ribbon-2014?wid=19&amp;hei=19&amp;fmt=png-alpha&amp;.v=0\" alt=\"\" width=\"19\" height=\"19\" data-scale-params-2=\"wid=38&amp;hei=38&amp;fmt=png-alpha&amp;.v=0\" data-scale-initial=\"1\" class=\"icon ir\" /> <span><span>$233.25<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\">per month</span><span class=\"as-price-acinstallmentmonths\"> for 12 <span aria-hidden=\"true\">mo.</span><span class=\"visuallyhidden\">months</span></span><span class=\"as-price-acinstallmentterms-footnotes\"><span class=\"visuallyhidden\">Footnote </span>*</span></span></span>", "financingText": "\n                \n\n\n\n\n\n\n              \n\n\n\n\t\t            <span><span>$233.25<span aria-hidden=\"true\">/mo.</span><span class=\"visuallyhidden\">per month</span><span class=\"as-price-acinstallmentmonths\"> for 12 <span aria-hidden=\"true\">mo.</span><span class=\"visuallyhidden\">months</span></span><span class=\"as-price-acinstallmentterms-footnotes\"><span class=\"visuallyhidden\">Footnote </span>*</span></span></span>\n\n\n\n\n\n", "shippingPrice": "\n<span class=\"freeshipping promo-text\">Free Shipping</span>", "buyNowButton": { "value": "add-to-cart", "name": "add-to-cart", "disabled": false, "text": "Add to Bag" }, "isBuyable": true, "acmiAssets": { "priceSubText": "includes instant trade-in", "acmiEligibleNote": "Eligible for Apple Card Monthly Installments", "priceSeparator": "or" }, "shippingLead": "\nAvailable to ship<strong>:</strong><br />\n<span class=\"customer_commit_display\">In Stock</span>\n\n\n\n" }
 
                         };
 
@@ -4935,7 +5021,7 @@ ase-loader-isunloaded
                                                             <label
                                                                 for="fs-tradeUp.category.moduleData-cat-smartphone">Smartphone
                                                                 <div class="as-fieldset-alttext">Up to $1050</div>
-                                                                </label>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -4959,7 +5045,7 @@ ase-loader-isunloaded
                                                             <label
                                                                 for="fs-tradeUp.category.moduleData-cat-tablet">Tablet
                                                                 <div class="as-fieldset-alttext">Up to $580</div>
-                                                                </label>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -4984,7 +5070,7 @@ ase-loader-isunloaded
                                                             <label
                                                                 for="fs-tradeUp.category.moduleData-cat-computer">Computer
                                                                 <div class="as-fieldset-alttext">Up to $1530</div>
-                                                                </label>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -5007,7 +5093,7 @@ ase-loader-isunloaded
                                                                     alt="" class="ir" width="200" height="200"></div>
                                                             <label for="fs-tradeUp.category.moduleData-cat-watch">Watch
                                                                 <div class="as-fieldset-alttext">Up to $185</div>
-                                                                </label>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                 </li>

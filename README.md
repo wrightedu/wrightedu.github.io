@@ -1,2 +1,2 @@
 # wrightedu.github.io
-Wright State CS/CEG apple partnership purchasing information
+Central github of WSU CSE
